@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import PriceEstimate from "@/components/PriceEstimate/PriceEstimate";
+import EMICalculator from "@/components/EMICalculator";
 import { formatPrice, formatArea, formatDistance, getPropertyTypeLabel } from "@/lib/utils";
 import { MapPin, Maximize2, Phone, Mail, ArrowLeft, Share2, Home, TreePine, Building2, Briefcase, Calendar, CheckCircle2, Loader2 } from "lucide-react";
 
@@ -195,7 +196,7 @@ export default function ListingDetailPage() {
                 askingPrice={property.price}
               />
             )}
-
+            <EMICalculator defaultPrice={property.price} />
             {/* Location info */}
             <div className="glass rounded-xl p-4 border border-white/5">
               <h3 className="text-sm font-semibold text-slate-300 mb-3">Location</h3>
